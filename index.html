@@ -282,6 +282,47 @@ mark.col{background:none;color:inherit}
 .crit div{display:flex;gap:10px;align-items:center;font-size:14px}
 .crit .ok{color:var(--good)}.crit .no{color:var(--bad)}
 
+/* principles */
+.path{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:12.5px;font-weight:600;color:var(--muted)}
+.path span{background:var(--surface-2);border:1px solid var(--line);border-radius:99px;padding:5px 11px;transition:.2s}
+.path span.on{background:var(--good-soft);color:var(--good);border-color:transparent}
+.acc{--c:#d0334c;border:1px solid color-mix(in srgb,var(--c) 26%,transparent);border-radius:14px;overflow:hidden;background:color-mix(in srgb,var(--c) 8%,var(--surface))}
+.acc.a{--c:#c27a0e}.acc.s{--c:#14945f}.acc.t{--c:#2f63d8}.acc.x{--c:#4f46c8}
+.acc > button{width:100%;display:flex;align-items:center;gap:12px;padding:16px 18px;background:none;border:0;cursor:pointer;text-align:left;color:var(--ink)}
+.acc > button b{display:block;font:700 15px var(--f-display);letter-spacing:.02em;color:color-mix(in srgb,var(--c) 80%,var(--ink))}
+.acc > button small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.acc > button .ic{margin-left:auto;color:var(--c);transition:transform .2s}
+.acc > button[aria-expanded="true"] .ic{transform:rotate(180deg)}
+.acc .body{background:var(--surface);padding:18px 20px 20px;display:grid;gap:16px;border-top:1px solid color-mix(in srgb,var(--c) 20%,transparent)}
+.acc h5{margin:0 0 6px;font:700 13.5px var(--f-body)}
+.acc p{margin:0}
+.acc ol,.acc ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px}
+.expr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.expr div{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.expr h6{margin:0 0 6px;font:700 11px var(--f-body);letter-spacing:.07em;text-transform:uppercase;color:var(--c)}
+.expr ul{font-size:13px;padding-left:16px}
+.expr li::marker{color:var(--c)}
+.example{border:1px solid color-mix(in srgb,var(--c) 30%,transparent);background:color-mix(in srgb,var(--c) 6%,var(--surface));border-radius:10px;padding:12px 14px;font-size:14px;display:grid;gap:6px}
+.example h5{color:var(--c)}
+.mistakes h5{color:var(--c)}
+.remember{font-size:13px;border-left:3px solid var(--c);padding:6px 12px;background:var(--surface-2);border-radius:0 8px 8px 0}
+.tagl{font-weight:700}.tagl.l{color:#d0334c}.tagl.a{color:#c27a0e}.tagl.s{color:#14945f}.tagl.t{color:#2f63d8}
+.cta{text-align:center;justify-items:center;padding:30px 20px}
+.cta .ring-ic{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.cta p{max-width:52ch;margin:0}
+/* industries */
+.steph{font-size:19px;margin:0}
+.inds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.ind{display:flex;align-items:center;gap:16px;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:20px;cursor:pointer;color:var(--ink);transition:.15s}
+.ind:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
+.ind .icw{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;flex:none}
+.ind .icw .ic{width:26px;height:26px}
+.ind b{display:block;font:600 16px var(--f-display)}
+.ind small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+.stephead{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px}
+.badge{display:inline-flex;gap:6px;flex-wrap:wrap}
+.badge span{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:6px;background:var(--surface-2);color:var(--muted)}
+
 /* research */
 .q{border-bottom:1px solid var(--line);padding-block:14px;display:grid;gap:8px}
 .q:last-of-type{border-bottom:0}
@@ -310,7 +351,7 @@ mark.col{background:none;color:inherit}
   .last{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:640px){
-  .grid2,.gloss,.personas,.means{grid-template-columns:1fr}
+  .grid2,.gloss,.personas,.means,.inds{grid-template-columns:1fr}
   .last{grid-template-columns:1fr}
   .strip .meta{margin-left:0}
   .mood{width:110px}
@@ -472,37 +513,60 @@ mark.col{background:none;color:inherit}
   <div class="hero cs">
     <span class="chip">Module 4 · Client &amp; Stakeholder Management</span>
     <h1>Complaint Handling &amp; Customer Service</h1>
-    <p>Master the L.A.S.T model (Listen, Apologize, Solve, Thank), then practise real-time voice calls with AI customers at three difficulty levels while a live script guides you.</p>
+    <p>Master the L.A.S.T model (Listen, Apologize, Solve, Thank), then practise real-time voice calls with AI customers across four industries and three difficulty levels while a live script guides you.</p>
   </div>
   <div class="subtabs" id="csTabs" role="tablist">
-    <button data-sub="sim" aria-selected="true"><svg class="ic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>AI Customer Simulator</button>
-    <button data-sub="last" aria-selected="false">L.A.S.T Framework</button>
+    <button data-sub="principles" aria-selected="true">Customer Service Principles</button>
+    <button data-sub="sim" aria-selected="false"><svg class="ic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>AI Voice Simulation</button>
   </div>
 
-  <div data-subpanel="last" class="stack" hidden>
-    <div class="card stack">
-      <h3>L.A.S.T 4-step response builder</h3>
-      <div class="last" id="lastSteps"></div>
+  <div data-subpanel="principles" class="stack">
+    <div class="card stack" style="gap:12px">
+      <h2 style="font-size:21px">The L.A.S.T Framework for Complaints</h2>
+      <p class="muted" style="margin:0;max-width:82ch">Learn how to handle customer complaints professionally using four essential steps: Listen, Apologize, Solve, and Thank. Explore practical expressions, real-world examples, and common mistakes to improve your customer service communication skills.</p>
+      <div class="path" id="lastPath"><span data-p="0">1 · Learn the theory</span>→<span data-p="1">2 · Explore examples</span>→<span data-p="2">3 · Build a response</span>→<span data-p="3">4 · Practice with AI</span></div>
     </div>
-    <div class="darkout" id="lastOut"></div>
-    <div class="row"><button class="btn" id="lastCopy">Copy response</button></div>
+    <div class="stack" id="lastAcc" style="gap:12px"></div>
+    <div class="card stack">
+      <div><h3>Build a Response</h3><p class="muted small" style="margin:4px 0 0">Choose one expression for each step to assemble a complete L.A.S.T reply to a delayed-delivery complaint.</p></div>
+      <div class="last" id="lastSteps"></div>
+      <div class="darkout" id="lastOut"></div>
+      <div class="row"><button class="btn ghost" id="lastCopy">Copy response</button></div>
+    </div>
+    <div class="card stack cta">
+      <span class="ring-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span>
+      <h3 style="font-size:19px">Ready to apply what you've learned?</h3>
+      <p class="muted">Put theory into practice by handling real-world scenarios with our AI customers. Use the L.A.S.T framework to structure your responses.</p>
+      <button class="btn" id="goPractice" style="padding:12px 22px"><svg class="ic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Practice the L.A.S.T Framework</button>
+    </div>
   </div>
 
-  <div data-subpanel="sim">
+  <div data-subpanel="sim" hidden>
     <!-- setup -->
     <div id="simSetup">
-      <h2 style="font-size:19px;margin-bottom:14px">1. Choose your customer</h2>
-      <div class="personas" id="personaCards"></div>
-      <div class="setupgrid">
+      <div id="simStep1">
+        <h2 class="steph">Step 1: Select a Business Industry</h2>
+        <p class="muted" style="margin:6px 0 0">Choose a field to generate relevant customer service scenarios.</p>
+        <div class="inds" id="indCards"></div>
+      </div>
+      <div id="simStep2" hidden>
+        <div class="stephead"><button class="icbtn" id="back1" title="Back to industries" aria-label="Back to industries"><svg class="ic" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <div><h2 class="steph">Step 2: Select Customer Persona</h2><p class="muted small" style="margin:4px 0 0">The specific complaint will be generated from your chosen industry: <b id="indName"></b>.</p></div></div>
+        <div class="personas" id="personaCards"></div>
+      </div>
+      <div id="simStep3" hidden>
+        <div class="stephead"><button class="icbtn" id="back2" title="Back to personas" aria-label="Back to personas"><svg class="ic" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <div><h2 class="steph">Step 3: Review the Complaint &amp; Start</h2><p class="muted small" style="margin:4px 0 0">Every practice generates a new complaint. You can edit what the customer says before the call.</p></div></div>
+      <div class="setupgrid" style="margin-top:0">
         <div class="card stack">
-          <h3>2. Customize what the customer says</h3>
+          <div class="spread"><h3>Today's complaint</h3><span class="badge" id="caseBadge"></span></div>
           <label class="field"><span>Issue (shown to you before the call)</span><input type="text" id="cfgIssue"></label>
-          <label class="field"><span>Customer's opening line</span><textarea id="cfgOpening" rows="3"></textarea></label>
-          <div class="row"><button class="btn ghost sm" id="cfgPreview"><svg class="ic" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Preview voice</button><button class="btn ghost sm" id="cfgReset">Reset to default</button></div>
+          <label class="field"><span>Customer's opening line</span><textarea id="cfgOpening" rows="4"></textarea></label>
+          <div class="row"><button class="btn ghost sm" id="cfgPreview"><svg class="ic" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>Preview voice</button><button class="btn ghost sm" id="cfgNew"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>Generate another complaint</button></div>
           <label class="field"><span>Your agent name (used in the script)</span><input type="text" id="cfgAgent" value="Alex"></label>
         </div>
         <div class="card stack">
-          <h3>3. Voice &amp; practice settings</h3>
+          <h3>Voice &amp; practice settings</h3>
           <label class="field"><span>Customer voice</span><select id="cfgVoice"></select></label>
           <div class="range"><span>Speed</span><input type="range" id="cfgRate" min="0.6" max="1.4" step="0.05" value="1"><output id="cfgRateO">1.00</output></div>
           <div class="range"><span>Pitch</span><input type="range" id="cfgPitch" min="0.5" max="1.6" step="0.05" value="1"><output id="cfgPitchO">1.00</output></div>
@@ -524,6 +588,7 @@ mark.col{background:none;color:inherit}
         </div>
       </div>
       <div style="margin-top:18px"><button class="btn block" id="simStart" style="padding:14px;font-size:15px"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Start the call</button></div>
+      </div>
     </div>
 
     <!-- live session -->
@@ -577,8 +642,9 @@ mark.col{background:none;color:inherit}
           <div class="stack" style="gap:10px"><b>Coach feedback</b><div id="scFeed" class="small" style="display:grid;gap:8px"></div></div>
         </div>
         <div class="row">
-          <button class="btn" id="scAgain">Try again with this customer</button>
-          <button class="btn ghost" id="scNew">Choose another customer</button>
+          <button class="btn" id="scAgain">Practice a new complaint</button>
+          <button class="btn ghost" id="scRetry">Retry this complaint</button>
+          <button class="btn ghost" id="scNew">Change industry or customer</button>
           <button class="btn ghost" id="scCopy">Copy transcript</button>
         </div>
       </div>
@@ -862,46 +928,124 @@ ngRender();
 /* =========================================================
    MODULE 4a · L.A.S.T FRAMEWORK
    ========================================================= */
+const THEORY = [
+  { c: "l", n: "1. L — Listen", sub: "Understand the Customer's Concern",
+    def: "Listening means paying attention to the customer's problem, understanding their needs, and acknowledging their feelings before offering a solution. Active listening helps prevent misunderstandings and shows customers that their concerns matter.",
+    actions: [["Pay attention", "Allow the customer to explain the problem without unnecessary interruptions."], ["Acknowledge the concern", "Show that you understand the issue and recognize its impact on the customer."], ["Ask clarifying questions", "Request additional information when necessary to understand the situation accurately."], ["Paraphrase the problem", "Restate the customer's concern in your own words to confirm your understanding."]],
+    expr: [["Acknowledging the issue", ["I understand your concern.", "I can see why this would be frustrating.", "I understand how inconvenient this situation must be.", "I appreciate you bringing this issue to our attention."]],
+      ["Asking for clarification", ["Could you please provide your order number?", "Could you tell me a little more about what happened?", "May I confirm a few details before proceeding?", "When did you first notice this issue?"]],
+      ["Confirming understanding", ["Just to make sure I understand correctly, your order has not arrived yet. Is that right?", "If I understand correctly, you were charged twice for the same transaction.", "So, the main issue is that you received the wrong item. Is that correct?"]]],
+    ex: [["Customer", "I've been waiting for my order for five days, and it still hasn't arrived!"], ["Representative", "I understand how frustrating it must be to wait for your order without receiving it. Could you please provide your order number so I can check the delivery status?"]],
+    mistakes: ["Interrupting the customer before they finish explaining.", "Making assumptions without checking the facts.", "Responding with vague expressions such as \"Okay\" or \"I see\" without acknowledging the actual concern.", "Offering a solution before understanding the problem."],
+    remember: "Listen first, understand the issue, and clarify any missing information before deciding what to do next." },
+  { c: "a", n: "2. A — Apologize", sub: "Express Sincere Regret and Empathy",
+    def: "Apologizing means acknowledging the inconvenience or negative experience the customer has encountered and expressing appropriate regret. A professional apology should sound sincere, respectful, and relevant to the situation. It should not be used as a substitute for actually addressing the problem.",
+    actions: [["Acknowledge the inconvenience", "Recognize how the issue has affected the customer."], ["Apologize sincerely", "Use clear and appropriate language rather than making a vague or insincere apology."], ["Avoid blaming others", "Focus on the customer's concern instead of making excuses or assigning blame prematurely."], ["Move toward a solution", "After acknowledging the problem, explain how you will help address it."]],
+    expr: [["General apologies", ["I'm sorry for the inconvenience.", "We apologize for the delay.", "We sincerely apologize for the trouble this has caused.", "Please accept our apologies for this experience."]],
+      ["Showing empathy", ["I understand how disappointing this must be.", "I can appreciate how frustrating this situation is.", "I understand why this issue is concerning to you.", "I realize this has caused you unnecessary inconvenience."]],
+      ["Taking appropriate responsibility", ["We take your concern seriously.", "We recognize that this situation has not met your expectations.", "I'm sorry that we did not communicate this clearly.", "We apologize for the error and will work to address it."]]],
+    ex: [["Customer", "This is the second time my delivery has been delayed. I'm really disappointed with your service."], ["Representative", "I'm sorry that you've experienced repeated delays. I understand how disappointing this must be, and we take your concern seriously. Let me review the situation and explain what we can do next."]],
+    mistakes: ["Giving a mechanical apology without acknowledging the customer's experience.", "Making excuses instead of addressing the concern.", "Blaming the customer or another department.", "Promising compensation or accepting responsibility for unverified facts.", "Repeating \"I'm sorry\" without explaining the next step."],
+    remember: "A sincere apology acknowledges the customer's experience. It should be followed by appropriate action." },
+  { c: "s", n: "3. S — Solve", sub: "Provide a Clear and Actionable Solution",
+    def: "Solving means identifying an appropriate way to address the customer's concern and explaining the next steps clearly. An effective solution should be realistic, relevant to the problem, consistent with company policies, and within your authority or properly escalated to someone who can act.",
+    actions: [["Identify the appropriate solution", "Use the available information to determine what can reasonably be done."], ["Explain the next steps", "Tell the customer what action will be taken and who will be responsible."], ["Set realistic expectations", "Provide a timeline only when it can be reasonably supported or confirmed."], ["Offer alternatives when appropriate", "If the preferred solution is unavailable, explain other options."], ["Follow up on the issue", "Keep the customer informed until the agreed next step has been completed."], ["Escalate when necessary", "Refer the issue to a supervisor or specialist when it exceeds your authority or requires further investigation."]],
+    expr: [["Offering a solution", ["Let me see how we can resolve this issue.", "Here's what I can do to help.", "We can arrange a replacement, subject to our replacement policy.", "I can help you submit a refund request in accordance with our refund policy."]],
+      ["Explaining the next steps", ["I'll check the status of your order and update you once I have confirmation.", "I'll contact the relevant department to investigate this issue.", "The next step is to verify your transaction details.", "I'll explain the available options so you can decide how you'd like to proceed."]],
+      ["Setting expectations", ["I'll get back to you by 3 p.m. tomorrow, provided I receive the necessary confirmation.", "The estimated processing time is three to five business days.", "I'll confirm the expected delivery date once our logistics team responds.", "I'll keep you informed of any updates."]],
+      ["Escalating an issue", ["I'll escalate this matter to our support manager for further review.", "This issue requires additional investigation by our technical team.", "Let me connect you with the appropriate department for further assistance."]]],
+    ex: [["Customer", "I paid for express delivery, but my order is still delayed. What are you going to do about it?"], ["Representative", "I apologize for the delay. I'll check your shipment details and contact our logistics team to confirm the reason for the delay. Once I have the information, I'll explain the available options and update you on the next steps."]],
+    mistakes: ["Saying \"We'll look into it\" without explaining what happens next.", "Promising a refund, replacement, or delivery date without authorization or confirmation.", "Giving unrealistic deadlines.", "Offering a solution that does not address the customer's actual concern.", "Failing to follow up after promising an update."],
+    remember: "A good solution is specific, realistic, and actionable. Never promise an outcome you cannot guarantee." },
+  { c: "t", n: "4. T — Thank", sub: "Show Appreciation and End Professionally",
+    def: "Thanking means expressing appreciation for the customer's patience, cooperation, feedback, or willingness to help clarify the issue. A suitable closing can reinforce trust and help maintain a positive professional relationship. However, the timing and wording should match the customer's emotional state and the situation.",
+    actions: [["Thank the customer appropriately", "Recognize their patience, feedback, or cooperation when relevant."], ["Reinforce your commitment", "Let the customer know that their concern is being taken seriously."], ["Offer further assistance", "Give the customer an opportunity to ask additional questions when appropriate."], ["Close professionally", "Use a polite and natural closing suited to the communication channel."]],
+    expr: [["Showing appreciation", ["Thank you for your patience.", "Thank you for bringing this issue to our attention.", "We appreciate your understanding.", "Thank you for providing those details.", "We appreciate the opportunity to address your concern."]],
+      ["Offering further assistance", ["Please let me know if you have any further questions.", "Is there anything else I can help you with?", "If you need any additional assistance, please feel free to contact us."]],
+      ["Professional closing", ["Thank you for your understanding and cooperation.", "We appreciate your continued support.", "Thank you for giving us the opportunity to assist you."]]],
+    ex: [["Representative", "Thank you for your patience while we investigate this issue. I'll update you as soon as I have confirmation from our logistics team. Please let me know if you need any further assistance."]],
+    mistakes: ["Thanking the customer before acknowledging a serious concern.", "Using the same closing sentence in every situation.", "Thanking customers for their patience when they have not been given a clear explanation or next step.", "Ending the conversation without confirming what will happen next."],
+    remember: "A professional closing should feel sincere and appropriate, not automatic or repetitive." }
+];
+const FULL_EXAMPLE = {
+  customer: "I've been waiting for my order for five days, and it still hasn't arrived. This is really frustrating!",
+  steps: [["l", "Listen", "I understand how frustrating it must be to wait for your order without receiving it. Could you please provide your order number so I can check the delivery status?", "Acknowledges the customer's frustration and requests the information needed to investigate."],
+    ["a", "Apologize", "I'm sorry for the delay and the inconvenience this has caused.", "Expresses regret for the inconvenience without making unsupported claims about the cause."],
+    ["s", "Solve", "I'll review your shipment details and contact our logistics team to confirm the current status. Once I have an update, I'll let you know the available options and the expected next steps.", "Identifies concrete actions while avoiding an unconfirmed promise."],
+    ["t", "Thank", "Thank you for bringing this issue to our attention. I appreciate your patience while we look into it.", "Ends respectfully and recognizes the customer's cooperation."]],
+  checklist: [["L", ["Have I understood the customer's actual concern?", "Do I need to clarify any information?"]], ["A", ["Have I acknowledged the inconvenience appropriately?", "Does my apology sound sincere and professional?"]], ["S", ["Have I explained the next step clearly?", "Is my proposed solution realistic and within company policy?", "Have I avoided unsupported promises?"]], ["T", ["Is my closing appropriate to the situation?", "Have I communicated any necessary follow-up?"]]]
+};
+const CHEV = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const li = arr => arr.map(x => `<li>${esc(x)}</li>`).join("");
+function theoryBody(t) {
+  return `<div><h5>Definition</h5><p>${esc(t.def)}</p></div>
+    <div><h5>Key Actions</h5><ol>${t.actions.map(([a, b]) => `<li><b>${esc(a)}:</b> ${esc(b)}</li>`).join("")}</ol></div>
+    <div><h5>Useful Expressions</h5><div class="expr">${t.expr.map(([h, xs]) => `<div><h6>${esc(h)}</h6><ul>${li(xs)}</ul></div>`).join("")}</div></div>
+    <div class="example"><h5>Example Scenario</h5>${t.ex.map(([w, s]) => `<div><b>${w}:</b> "${esc(s)}"</div>`).join("")}</div>
+    <div class="mistakes"><h5>Common Mistakes to Avoid</h5><ul>${li(t.mistakes)}</ul></div>
+    <div class="remember"><b>Remember:</b> ${esc(t.remember)}</div>`;
+}
+function fullBody() {
+  const f = FULL_EXAMPLE;
+  return `<div class="example"><h5>Full L.A.S.T Response Example</h5><span class="muted small"><i>Scenario: A delayed delivery. A customer contacts an online retail company because their order has not arrived as expected.</i></span>
+      <div><b>Customer:</b> "${esc(f.customer)}"</div>
+      ${f.steps.map(([c, n, s]) => `<div><span class="tagl ${c}">[${n}]</span> "${esc(s)}"</div>`).join("")}</div>
+    <div><h5>Why does this response work?</h5><ul>${f.steps.map(([c, n, , w]) => `<li><span class="tagl ${c}">${n}:</span> ${esc(w)}</li>`).join("")}</ul></div>
+    <div><h5>Quick Reference Checklist</h5><ul>${f.checklist.map(([k, qs]) => `<li><b>${k}:</b> ${esc(qs.join(" "))}</li>`).join("")}</ul></div>
+    <div class="remember"><b>Final tip:</b> The L.A.S.T framework is a guide, not a rigid script. Adapt your language to the customer's needs, the seriousness of the issue, and the communication channel. The goal is to make customers feel heard, communicate honestly, and take appropriate action to resolve their concerns.</div>`;
+}
+$("#lastAcc").innerHTML = THEORY.map((t, i) => `<div class="acc ${t.c}"><button aria-expanded="false" data-acc="${i}"><span><b>${t.n.toUpperCase()}</b><small>${t.sub}</small></span>${CHEV}</button><div class="body" hidden>${theoryBody(t)}</div></div>`).join("") +
+  `<div class="acc x"><button aria-expanded="false" data-acc="full"><span><b>Complete Example &amp; Checklist</b><small>Putting it all together before you practice</small></span>${CHEV}</button><div class="body" hidden>${fullBody()}</div></div>`;
+const pathDone = i => $(`#lastPath [data-p="${i}"]`).classList.add("on");
+$("#lastAcc").addEventListener("click", e => {
+  const b = e.target.closest("[data-acc]"); if (!b) return;
+  const open = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", open); b.nextElementSibling.hidden = !open;
+  if (open) pathDone(b.dataset.acc === "full" ? 1 : 0);
+});
+
 const LAST = [
-  ["s-l", "L · Listen", "Acknowledge the issue", ["I completely understand your frustration regarding the delay.", "Thank you for bringing this matter to our attention.", "I can see how inconvenient this situation has been for you."]],
-  ["s-a", "A · Apologize", "Sincere apology", ["We sincerely apologize for the inconvenience and delay caused.", "Please accept our deepest apologies for this oversight.", "I am truly sorry that our service did not meet your expectations."]],
-  ["s-s", "S · Solve", "Propose a solution", ["To rectify this immediately, I have prioritized your shipment for express delivery today.", "We have issued a full refund, which will reach your account within 3 business days.", "Our technical team has resolved the issue, and your account has been credited."]],
-  ["s-t", "T · Thank", "Appreciate their patience", ["We deeply appreciate your patience and continued partnership.", "Thank you for your understanding and for being a valued customer.", "We value your feedback, as it helps us improve our service."]]
+  ["s-l", "L · Listen", "Acknowledge & clarify", ["I understand how frustrating it must be to wait for your order without receiving it. Could you please provide your order number?", "I can see why this would be frustrating. Could you tell me a little more about what happened?", "I appreciate you bringing this issue to our attention. May I confirm a few details before proceeding?"]],
+  ["s-a", "A · Apologize", "Sincere apology", ["I'm sorry for the delay and the inconvenience this has caused.", "We sincerely apologize for the trouble this has caused, and we take your concern seriously.", "Please accept our apologies. We recognize that this situation has not met your expectations."]],
+  ["s-s", "S · Solve", "Clear next steps", ["I'll review your shipment details and contact our logistics team to confirm the current status. Once I have an update, I'll let you know the available options.", "I'll escalate this matter to our support manager and get back to you by 3 p.m. tomorrow, provided I receive the necessary confirmation.", "We can arrange a replacement, subject to our replacement policy. The estimated processing time is three to five business days."]],
+  ["s-t", "T · Thank", "Close professionally", ["Thank you for bringing this issue to our attention. I appreciate your patience while we look into it.", "Thank you for your understanding and cooperation. Is there anything else I can help you with?", "We appreciate the opportunity to address your concern. Please let me know if you have any further questions."]]
 ];
 $("#lastSteps").innerHTML = LAST.map(([c, t, h, opts], i) => `<div class="step ${c}"><span class="tag">${t}</span><h4>${h}</h4><select data-last="${i}" aria-label="${t}">${opts.map(o => `<option>${esc(o)}</option>`).join("")}</select></div>`).join("");
-function lastText() { return `Dear Valued Client,\n\n${$$("[data-last]").map(s => s.value).join("\n\n")}\n\nBest regards,\nHUFLIT Senior Client Services Team`; }
-function lastRender() { $("#lastOut").innerHTML = `<span class="h">Completed customer service response:</span>\n\n${esc(lastText())}`; }
-$("#lastSteps").addEventListener("change", lastRender);
+function lastText() { return `Dear Valued Customer,\n\n${$$("[data-last]").map(s => s.value).join("\n\n")}\n\nBest regards,\nHUFLIT Senior Client Services Team`; }
+function lastRender() { $("#lastOut").innerHTML = `<span class="h">Your complete L.A.S.T response:</span>\n\n${esc(lastText())}`; }
+$("#lastSteps").addEventListener("change", () => { lastRender(); pathDone(2); });
 $("#lastCopy").addEventListener("click", () => copyText(lastText()));
 lastRender();
+$("#goPractice").addEventListener("click", () => { pathDone(3); $('#csTabs [data-sub="sim"]').click(); showSimStep(1); window.scrollTo({ top: $("#csTabs").getBoundingClientRect().top + scrollY - 90, behavior: "smooth" }); });
 
 /* =========================================================
    MODULE 4b · AI CUSTOMER SIMULATOR
    ========================================================= */
-const PERSONAS = {
+const INDUSTRIES = {
+  ecom: { name: "E-commerce & Retail", sub: "Returns, shipping delays, wrong items.", company: "ShopEase", tint: "#2f63d8",
+    icon: '<circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/>' },
+  saas: { name: "Software & SaaS (B2B)", sub: "System outages, bugs, login issues.", company: "CloudDesk", tint: "#7c3aed",
+    icon: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M10 8l-2 2 2 2M14 8l2 2-2 2"/>' },
+  logi: { name: "Logistics & Supply Chain", sub: "Customs delays, damaged cargo, freight.", company: "SwiftFreight", tint: "#c27a0e",
+    icon: '<path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>' },
+  hosp: { name: "Hospitality & Events", sub: "Booking errors, room upgrades, complaints.", company: "Harbor Grand Hotel", tint: "#d0334c",
+    icon: '<path d="M3 18h18M5 18a7 7 0 0 1 14 0M12 8V6M10 6h4"/>' }
+};
+const LEVELS = {
   easy: {
     name: "Emma Clarke", level: "Level 1 · Easy-going", cls: "easy", mood: 72, gain: 1.35, loss: .6,
     needsAck: false, needsApology: false, needsComp: false, voiceRate: 1, voicePitch: 1.15,
-    issue: "Three textbooks ordered online are three days late.",
-    card: "Her textbook order is late. She's understanding but needs a clear delivery date.",
-    detail: "Order BK-20417 · 3 hardcover textbooks · due Monday, now Thursday · class starts next week",
-    issueShort: "the delay with your textbook order",
-    fix: "I've upgraded your order to express delivery at no extra cost",
-    timeline: "Your books will arrive by tomorrow afternoon, and I'll email you the tracking number within the hour",
-    comp: "I've also added a 10% discount code to your account for the inconvenience",
+    card: "Polite, understanding, but needs clear information and a quick fix.",
     lines: {
-      opening: "Hi there. I ordered three textbooks from your store last week, and they were supposed to arrive on Monday. It's Thursday now and I still don't have them. Could you check what's going on?",
-      details: ["Sure! The order number is BK-20417, under the name Emma Clarke."],
-      ack: ["Thank you, I appreciate that. So what can we do about it?", "That's kind of you. I just really need them before my class starts next week."],
-      needAck: ["Okay. I understand these things happen."],
-      needApology: ["Okay."],
-      needTimeline: ["That sounds good! Do you know roughly when they'll arrive?", "Great. And when should I expect them?"],
+      ack: ["Thank you, I appreciate that. So what can we do about it?", "That's kind of you. What happens next?"],
+      needAck: ["Okay. I understand these things happen."], needApology: ["Okay."],
+      needTimeline: ["That sounds good! Do you know roughly when that will happen?", "Great. And when should I expect that?"],
       needComp: [],
-      push: ["Okay. Is there any way to speed things up?", "I see. So what happens next?", "Could you check where the package is right now?"],
+      push: ["Okay. Is there any way to speed things up?", "I see. So what happens next?", "Could you check what's going on for me?"],
       accept: "Oh, that's perfect. Thank you so much for sorting this out so quickly!",
       close: "Thanks again, you've been really helpful. Have a lovely day!",
       angry: ["Hmm, that's a bit disappointing to hear. I was hoping you could help me."],
-      hangup: "I think I'll just cancel the order and buy them somewhere else. Goodbye.",
+      hangup: "I think I'll just take my business somewhere else. Goodbye.",
       clarify: ["Sorry, I didn't quite catch that. Could you say it again?"],
       timeout: "I've been on the phone for quite a while now. Maybe I'll just email instead. Bye."
     }
@@ -909,60 +1053,115 @@ const PERSONAS = {
   normal: {
     name: "David Miller", level: "Level 2 · Normal", cls: "normal", mood: 50, gain: 1, loss: 1,
     needsAck: true, needsApology: false, needsComp: false, voiceRate: 1.02, voicePitch: .95,
-    issue: "Received a 24-inch monitor instead of the 27-inch UX-27Q he ordered.",
-    card: "He received the wrong product. He expects a quick, hassle-free exchange.",
-    detail: "Order MN-58302 · ordered UX-27Q 27-inch · received 24-inch · needs it for work next week",
-    issueShort: "receiving the wrong monitor",
-    fix: "I'll send the correct UX-27Q today by express shipping and email you a prepaid return label for the 24-inch model",
-    timeline: "The new monitor will arrive within 2 business days, well before your deadline next week",
-    comp: "You won't pay anything for the return, and I've added a $20 store credit for the trouble",
+    card: "Slightly annoyed, expects professional compensation or an immediate solution.",
     lines: {
-      opening: "Hello. I ordered a 27-inch monitor from you, the UX-27Q, but the box that arrived yesterday has a 24-inch model in it. I need the right one for work next week. What are you going to do about this?",
-      details: ["The order number is MN-58302. The name is David Miller."],
       ack: ["Okay, thanks. So how do we fix it?", "Right. So what's the plan?"],
-      needAck: ["Look, before we talk about the fix, I'd like to know you actually get the problem. This was your mistake, not mine."],
+      needAck: ["Look, before we talk about fixes, I'd like to know you actually understand the problem. This wasn't my mistake."],
       needApology: [],
-      needTimeline: ["Okay, but when exactly? I can't wait two weeks for this.", "And how long is that going to take?"],
+      needTimeline: ["Okay, but when exactly? I can't wait forever for this.", "And how long is that going to take?"],
       needComp: [],
-      push: ["So what's the next step?", "I hope I don't have to pay for the return shipping.", "Can you just tell me what happens now?"],
+      push: ["So what's the next step?", "I hope I'm not going to pay anything extra for this.", "Can you just tell me what happens now?"],
       accept: "Alright, that works for me. Thanks for handling it quickly.",
       close: "Okay, thanks. Bye.",
-      angry: ["That's not really acceptable. It was your mistake, not mine.", "I don't care about the policy. I want the monitor I paid for."],
-      hangup: "Forget it. I'll file a complaint and get a refund through my bank. Goodbye.",
+      angry: ["That's not really acceptable. This wasn't my mistake.", "I don't care about the policy. I just want this sorted out."],
+      hangup: "Forget it. I'll file a formal complaint and ask for a refund. Goodbye.",
       clarify: ["Sorry, what was that?", "I didn't follow. Could you be more specific?"],
-      timeout: "This is taking way too long. I'll just return it and shop somewhere else."
+      timeout: "This is taking way too long. I'll take my business elsewhere."
     }
   },
   hard: {
     name: "Richard Hale", level: "Level 3 · Demanding", cls: "hard", mood: 22, gain: .7, loss: 1.45,
     needsAck: true, needsApology: true, needsComp: true, voiceRate: 1.1, voicePitch: .8,
-    issue: "Your cloud dispatch software has been down for two hours; his company is losing money.",
-    card: "A major software outage is costing him money. He's angry and demands compensation.",
-    detail: "Account HL-7731 · Hale Logistics · outage 2 hours · ~$4,000 lost per hour · drivers idle",
-    issueShort: "the outage that has stopped your dispatch operations",
-    fix: "I've escalated this to our senior engineering team as a priority-one incident, and an engineer is already restoring your service",
-    timeline: "We expect service to be back within 30 minutes, and I'll call you with an update every 15 minutes",
-    comp: "I'll also apply a service credit covering today's downtime to your account, and your account manager will review your losses with you tomorrow",
+    card: "Angry, demanding B2B client. May threaten to cancel contracts or leave bad reviews.",
     lines: {
-      opening: "Your software has been completely down for two hours! My drivers are sitting in the parking lot and we are losing about four thousand dollars every hour. I want to know what you're doing about it, right now!",
-      details: ["Account number HL-7731, Hale Logistics. I'm Richard Hale, the operations director. Now can we focus on the problem?"],
-      ack: ["Understanding doesn't get my trucks moving. What's the fix?", "Fine. Words are cheap. What are you actually doing?"],
+      ack: ["Understanding doesn't fix my problem. What's the fix?", "Fine. Words are cheap. What are you actually doing?"],
       needAck: ["Don't just jump to fixes. Do you even understand how serious this is for my business?"],
-      needApology: ["Not one word of apology? This outage is on your side, not mine."],
+      needApology: ["Not one word of apology? This is on your side, not mine."],
       needTimeline: ["'Soon' is not an answer. Give me an exact time.", "When? I need a specific time, not a promise."],
-      needComp: ["Fine, but who pays for the money we've lost today? I expect compensation for this outage.", "And what about our losses? I'm not paying full price for a service that doesn't work."],
+      needComp: ["Fine, but who pays for the losses this has caused? I expect compensation.", "And what about the damage this has done to my business? I'm not paying full price for this."],
       push: ["I've heard that before. What concretely is happening right now?", "Every minute you spend talking, I'm losing money.", "I need a real answer, not a script."],
       accept: "Alright. That's the first useful thing I've heard today. I'll hold you to it.",
-      close: "Fine. Make sure someone calls me with that update. Goodbye.",
+      close: "Fine. Make sure someone follows up with me as promised. Goodbye.",
       angry: ["Are you serious? That's exactly the kind of answer that makes me want to switch providers.", "Don't tell me to calm down. Fix it!"],
-      hangup: "I'm done with this. Put me through to your manager, or I'm cancelling our contract.",
+      hangup: "I'm done with this. Put me through to your manager, or I'm cancelling our contract and leaving a review everywhere.",
       clarify: ["What? Speak clearly. I don't have time for this.", "That makes no sense. Try again."],
       timeout: "We've been going around in circles. I'm escalating this to your CEO."
     }
   }
 };
+/* complaint bank: industry → level → complaints. Each practice picks a new one. */
+const SCEN = {
+  ecom: {
+    easy: [
+      { issue: "Three textbooks ordered online are three days late.", opening: "Hi there. I ordered three textbooks from your store last week, and they were supposed to arrive on Monday. It's Thursday now and I still don't have them. Could you check what's going on?", details: "Sure! The order number is BK-20417, under the name Emma Clarke.", detail: "Order BK-20417 · 3 hardcover textbooks · due Monday, now Thursday · class starts next week", issueShort: "the delay with your textbook order", fix: "I've upgraded your order to express delivery at no extra cost", timeline: "Your books will arrive by tomorrow afternoon, and I'll email you the tracking number within the hour", comp: "I've also added a 10% discount code to your account for the inconvenience" },
+      { issue: "One of three scented candles is missing from a gift order.", opening: "Hello! I just opened my order and one of the three scented candles is missing. It's not a big deal, but it was meant to be a birthday gift for my sister this weekend.", details: "Of course, it's order EC-31507, under Emma Clarke.", detail: "Order EC-31507 · 3 scented candles, 1 missing · gift needed by Saturday", issueShort: "the missing candle from your order", fix: "I'll ship the missing candle today with priority delivery at no cost", timeline: "It will arrive by Friday, in time for your sister's birthday", comp: "I've also added a 10% discount code to your account for the inconvenience" },
+      { issue: "Running shoes arrived in the wrong size.", opening: "Hi, I ordered running shoes in size 38, but the box has size 40 in it. I was hoping to wear them for a charity run next Sunday. Could you help me exchange them?", details: "Sure, the order number is EC-22914.", detail: "Order EC-22914 · size 38 ordered, size 40 received · charity run next Sunday", issueShort: "receiving the wrong shoe size", fix: "I'll send you a pair in size 38 today and email you a free return label for the size 40 pair", timeline: "The new pair will arrive within 2 business days, well before your run", comp: "I've also added 10% off your next order for the trouble" }
+    ],
+    normal: [
+      { issue: "Received a 24-inch monitor instead of the 27-inch UX-27Q he ordered.", opening: "Hello. I ordered a 27-inch monitor from you, the UX-27Q, but the box that arrived yesterday has a 24-inch model in it. I need the right one for work next week. What are you going to do about this?", details: "The order number is MN-58302. The name is David Miller.", detail: "Order MN-58302 · ordered UX-27Q 27-inch · received 24-inch · needs it for work next week", issueShort: "receiving the wrong monitor", fix: "I'll send the correct UX-27Q today by express shipping and email you a prepaid return label for the 24-inch model", timeline: "The new monitor will arrive within 2 business days, well before your deadline next week", comp: "You won't pay anything for the return, and I've added a $20 store credit for the trouble" },
+      { issue: "A blender arrived with a cracked glass jug.", opening: "Hi. The blender I ordered arrived with a cracked jug, and there's broken glass all over the box. I paid full price for this. How are you going to fix it?", details: "Order EC-40238, David Miller. I've already taken photos of the damage.", detail: "Order EC-40238 · blender with cracked glass jug · photos available", issueShort: "receiving a damaged blender", fix: "I'll arrange a replacement blender and a courier to collect the damaged one from your home", timeline: "The replacement will be delivered within 3 business days, and the courier can collect the old one tomorrow", comp: "You won't pay anything for the collection, and I've added a $15 store credit for the trouble" },
+      { issue: "Charged twice for a single online order.", opening: "Hello. I placed one order on your website, but my bank statement shows I've been charged twice, eighty-nine dollars each time. I need that money back.", details: "The order number is EC-57711, and both charges were on November 1st.", detail: "Order EC-57711 · charged $89 twice on Nov 1 · only one order placed", issueShort: "being charged twice for one order", fix: "I've submitted a refund request for the duplicate $89 charge with our billing team", timeline: "The refund will be processed within 3 to 5 business days, and I'll email you a confirmation today", comp: "I've also added a $10 store credit for the inconvenience" }
+    ],
+    hard: [
+      { issue: "A 200-unit wholesale order is on hold three days before a store opening.", opening: "This is unacceptable! I ordered two hundred units for my store's grand opening, and your website says the shipment is on hold. The opening is in three days and I've already paid for the advertising!", details: "Account RT-8820, Hale Home Store. I'm Richard Hale, the owner. Now what are you doing about it?", detail: "Account RT-8820 · 200-unit wholesale order on hold · store opening in 3 days", issueShort: "the delay with your wholesale order before your grand opening", fix: "I've escalated your order to our warehouse manager, and it has been moved to the front of today's dispatch queue", timeline: "The shipment will leave our warehouse this afternoon and arrive within 48 hours, before your opening", comp: "I'll also waive the shipping fee and apply a 15% discount to this order for the disruption" },
+      { issue: "Half of a 50-chair office order arrived broken, for the second time.", opening: "Your company sent us fifty office chairs and half of them are broken! My staff have nowhere to sit, and this is the second time this has happened!", details: "Account RT-6402, Hale Consulting. Richard Hale, managing director.", detail: "Account RT-6402 · 50 office chairs, 25 broken · second incident this year", issueShort: "the broken office chairs, and for this happening a second time", fix: "I've arranged for 25 replacement chairs to be delivered, and our team will collect the damaged ones", timeline: "The replacements will arrive by tomorrow afternoon, and I'll confirm the delivery time by email within the hour", comp: "I'll also refund 20% of the order value and assign a dedicated account manager to your future orders" },
+      { issue: "A $1,200 camera refund is three weeks overdue after four calls.", opening: "I returned a twelve-hundred-dollar camera three weeks ago and I still haven't received my refund. I've called four times and every time I get a different story. I'm about to post about this everywhere!", details: "Return number RT-1197. Richard Hale. I have the courier receipt showing you received it on the 12th.", detail: "Return RT-1197 · $1,200 camera · received by warehouse on the 12th · 4 previous calls", issueShort: "the delayed refund and the confusing answers you've received", fix: "I've escalated your case to our refunds supervisor, and the refund has been approved for immediate processing", timeline: "You'll see the $1,200 back on your card within 24 hours, and I'll personally email you the confirmation today", comp: "I'll also add a $50 credit to your account to apologize for the repeated calls" }
+    ]
+  },
+  saas: {
+    easy: [
+      { issue: "The password reset email never arrives.", opening: "Hi, I'm trying to reset my password, but the reset email never arrives. I've checked my spam folder too. I have a report to finish this afternoon, so I'd love a hand.", details: "Sure, my account email is emma.clarke@brightdesk.example.", detail: "Account emma.clarke@brightdesk.example · reset email not received · report due this afternoon", issueShort: "not being able to reset your password", fix: "I've sent a new reset link manually and whitelisted your email address on our side", timeline: "The link will arrive within 5 minutes and stays valid for 24 hours", comp: "I've also extended your free trial by 7 days for the trouble" },
+      { issue: "The 'Export to PDF' button does nothing.", opening: "Hello! The Export to PDF button in my dashboard doesn't seem to do anything. It's not urgent, but I need to send a report to my manager by Friday.", details: "My workspace ID is WS-3381.", detail: "Workspace WS-3381 · Export to PDF not working · report due Friday", issueShort: "the export button not working", fix: "I've reported the bug to our engineers, and I'll export the PDF for you manually in the meantime", timeline: "I'll email you the PDF within the hour, and the fix will be live by tomorrow morning", comp: "I'll also add one month of the Pro plan to your account at no cost" },
+      { issue: "The latest invoice shows the wrong company name.", opening: "Hi there, my latest invoice shows the wrong company name, so our finance team can't process it. Could you correct it for me?", details: "Of course. The invoice number is INV-20591, and the company should be Bright Desk Studio.", detail: "Invoice INV-20591 · wrong company name · should be Bright Desk Studio", issueShort: "the error on your invoice", fix: "I've updated your billing profile and issued a corrected invoice", timeline: "You'll receive the new invoice by email within the next hour", comp: "I've also applied a 10% discount to next month's subscription" }
+    ],
+    normal: [
+      { issue: "The mobile app crashes on launch since yesterday's update.", opening: "Hi. Your mobile app has crashed every time I open it since yesterday's update. I use it for all my client meetings. This is really frustrating.", details: "I'm on an iPhone 15, app version 4.2.0. My account ID is SA-90231.", detail: "Account SA-90231 · iPhone 15 · app v4.2.0 crashes on launch", issueShort: "the app crashing after the update", fix: "I've logged this with our mobile team, and I'll set up access to our web app for you right now so you can keep working", timeline: "A patch is scheduled for release within 24 hours, and I'll email you as soon as it's live", comp: "I've also credited one week of your subscription for the disruption" },
+      { issue: "Charged $49 again after cancelling the subscription.", opening: "Hello. I cancelled my subscription last month, but you've charged my card again for forty-nine dollars. I want that money back.", details: "My account ID is SA-11872. I cancelled on October 3rd.", detail: "Account SA-11872 · cancelled Oct 3 · charged $49 on Nov 1", issueShort: "being charged after you cancelled", fix: "I've confirmed your cancellation and submitted a refund for the $49 charge", timeline: "The refund will reach your card within 5 business days, and I'll email you a confirmation today", comp: "I've also made sure no further charges can be made, and added a $10 credit as an apology" },
+      { issue: "All next week's appointments disappeared after a calendar sync.", opening: "Hi. After syncing my calendar this morning, all my appointments for next week have disappeared. I have twelve client meetings booked!", details: "Account SA-77310, David Miller. The sync ran at about 8 a.m.", detail: "Account SA-77310 · 12 appointments lost · sync ran at 8 a.m.", issueShort: "losing your appointments after the sync", fix: "I've asked our data team to restore your calendar from last night's backup", timeline: "Your appointments will be restored within 2 hours, and I'll call you to confirm once it's done", comp: "I've also credited one month of your subscription" }
+    ],
+    hard: [
+      { issue: "The cloud dispatch software has been down for two hours.", opening: "Your software has been completely down for two hours! My drivers are sitting in the parking lot and we are losing about four thousand dollars every hour. I want to know what you're doing about it, right now!", details: "Account number HL-7731, Hale Logistics. I'm Richard Hale, the operations director. Now can we focus on the problem?", detail: "Account HL-7731 · Hale Logistics · outage 2 hours · ~$4,000 lost per hour", issueShort: "the outage that has stopped your dispatch operations", fix: "I've escalated this to our senior engineering team as a priority-one incident, and an engineer is already restoring your service", timeline: "We expect service to be back within 30 minutes, and I'll call you with an update every 15 minutes", comp: "I'll also apply a service credit covering today's downtime, and your account manager will review your losses with you tomorrow" },
+      { issue: "The payment gateway rejects every card during a flash sale.", opening: "Your payment gateway has been rejecting every card on our website for the last hour, right in the middle of our biggest sale of the year! We're losing thousands of dollars in orders!", details: "Merchant account HL-5520, Hale Fashion Group. Richard Hale, CEO.", detail: "Merchant HL-5520 · all card payments failing for 1 hour · annual sale running", issueShort: "the payment failures during your sale", fix: "I've opened a priority-one incident, and our payments engineers are switching your store to our backup gateway right now", timeline: "Card payments will be working again within 20 minutes, and I'll update you every 10 minutes until it's fixed", comp: "I'll also waive your transaction fees for this month and arrange a call with your account manager to review your losses" },
+      { issue: "An urgent premium-support ticket has gone unanswered for three days.", opening: "I submitted an urgent ticket three days ago about our users being locked out, and nobody has replied. We pay for premium support! What exactly are we paying for?", details: "Ticket number T-48812, account HL-3009. Richard Hale, IT director.", detail: "Ticket T-48812 · 3 days without reply · users locked out · premium plan", issueShort: "the lack of response to your urgent ticket", fix: "I've escalated your ticket to our senior support manager, and a dedicated engineer has been assigned to your case right now", timeline: "The engineer will contact you within 30 minutes, and we aim to restore your users' access within 2 hours", comp: "I'll also apply a service credit for this month's premium support fee, because we didn't meet our response time" }
+    ]
+  },
+  logi: {
+    easy: [
+      { issue: "Parcel tracking hasn't updated in four days.", opening: "Hi, my parcel's tracking hasn't updated in four days. It's just some books for my mum, so it's not urgent, but I'd like to know where it is.", details: "The tracking number is SF-602214.", detail: "Tracking SF-602214 · no update for 4 days · gift for her mother", issueShort: "the missing tracking updates", fix: "I've contacted the local depot, and your parcel has been located and scheduled for delivery", timeline: "It will be delivered by tomorrow afternoon, and you'll receive a text with a delivery window in the morning", comp: "I've also refunded your shipping fee for the delay" },
+      { issue: "A 'missed delivery' note arrived although she was home.", opening: "Hello! I got a note saying you tried to deliver my package yesterday, but I was home all day. Could we arrange another delivery?", details: "Sure, the tracking number is SF-118590.", detail: "Tracking SF-118590 · marked 'missed delivery' · customer was home", issueShort: "the missed delivery", fix: "I've booked a redelivery and added a note for the driver to call you on arrival", timeline: "The driver will come tomorrow between 9 a.m. and 12 p.m.", comp: "There's no charge for the redelivery, and I've added a voucher for your next shipment" },
+      { issue: "A shipment carries her old address.", opening: "Hi, I just realized my shipment has my old address on it. I moved last week. Is there any chance you could redirect it?", details: "Of course, the tracking number is SF-339027, and my new address is 14 Lake Street.", detail: "Tracking SF-339027 · old address on label · new address 14 Lake Street", issueShort: "the address issue", fix: "I've updated the delivery address and redirected your shipment", timeline: "It will arrive at your new address within 2 business days", comp: "I've also waived the redirection fee" }
+    ],
+    normal: [
+      { issue: "A crushed box arrived with two ceramic plates broken.", opening: "Hi. My parcel arrived today and the box was completely crushed. Two of the ceramic plates inside are broken. I'd like this sorted out.", details: "Tracking SF-774102. I've kept the box and the broken plates.", detail: "Tracking SF-774102 · crushed box · 2 ceramic plates broken · packaging kept", issueShort: "your parcel arriving damaged", fix: "I've opened a damage claim and arranged for the sender to dispatch replacement plates", timeline: "The claim will be processed within 3 business days, and the replacements will arrive within a week", comp: "We'll also refund your shipping cost in full" },
+      { issue: "Paid for next-day express, but the package is three days late.", opening: "Hello. I paid extra for next-day express delivery, but it's been three days and my package still hasn't arrived. Why am I paying for express?", details: "Tracking SF-920331, express service, booked on Monday.", detail: "Tracking SF-920331 · next-day express · 3 days late", issueShort: "the delay with your express delivery", fix: "I've located your package at our regional hub and upgraded it to priority dispatch", timeline: "It will be delivered today before 6 p.m.", comp: "I've also refunded the express delivery fee" },
+      { issue: "An import from Japan has been held in customs for a week.", opening: "Hi. My shipment from Japan has been stuck in customs for a week. Nobody told me I needed any documents. What do I need to do?", details: "Shipment SF-JP-5521, David Miller.", detail: "Shipment SF-JP-5521 · held in customs 7 days · missing import form", issueShort: "your shipment being held in customs", fix: "I'll email you the exact customs form you need, and our customs broker will submit it on your behalf", timeline: "Once we receive the form, the shipment will be released within 48 hours", comp: "We'll also cover the storage fees charged during the delay" }
+    ],
+    hard: [
+      { issue: "A container of electronics has been stuck at port for nine days.", opening: "Our container of electronics has been stuck at the port for nine days, and nobody from your company has given me a straight answer! My retailers are cancelling orders and I'm paying penalty fees every day!", details: "Booking number LG-44871, Hale Imports. I'm Richard Hale, the managing director.", detail: "Booking LG-44871 · container held at port 9 days · daily penalty fees", issueShort: "the delay with your container and the lack of updates", fix: "I've escalated your booking to our port operations manager, and your container has been prioritized for release and trucking", timeline: "It will be released by tomorrow noon and delivered to your warehouse within 24 hours after that, with updates twice a day", comp: "I'll also waive the port storage charges, and our team will review the penalty fees with you for compensation" },
+      { issue: "Half of a furniture shipment for a hotel opening arrived damaged.", opening: "Half of the furniture shipment you delivered this morning is damaged! Scratched tables, broken chairs. This was for a hotel opening on Monday, and my reputation is on the line!", details: "Shipment LG-30958, Hale Interiors. Richard Hale.", detail: "Shipment LG-30958 · ~50% furniture damaged · hotel opening Monday", issueShort: "the damaged furniture before your opening", fix: "I've filed a priority damage claim, and our team is arranging replacement pieces from our nearest warehouse", timeline: "An inspector will visit you this afternoon, and the replacements will be delivered by Saturday", comp: "We'll cover the full cost of the damaged items and refund 25% of the freight charges" },
+      { issue: "A refrigerated truck broke down and ruined a seafood load.", opening: "Your refrigerated truck broke down and our shipment of fresh seafood sat in the heat for six hours. The whole load is ruined, worth over twenty thousand dollars!", details: "Consignment LG-77012, Hale Seafood Co. Richard Hale, owner.", detail: "Consignment LG-77012 · cold chain failed 6 hours · load worth $20,000+", issueShort: "the loss of your seafood shipment", fix: "I've opened a priority insurance claim and assigned a claims manager to your case today", timeline: "The claims manager will call you within 1 hour, and we'll confirm the compensation amount within 3 business days", comp: "We'll compensate you for the full value of the spoiled goods and waive the freight charges for this shipment" }
+    ]
+  },
+  hosp: {
+    easy: [
+      { issue: "The room won't be ready for two hours after a long flight.", opening: "Hi there! We've just arrived, but the receptionist said our room won't be ready for another two hours. We've had a long flight. Is there anything you can do?", details: "Sure, the booking is under Emma Clarke, reference HG-4410.", detail: "Booking HG-4410 · room not ready · guests just off a long flight", issueShort: "having to wait for your room", fix: "I've arranged for you to relax in our guest lounge with complimentary refreshments, and housekeeping is prioritizing your room", timeline: "Your room will be ready within 45 minutes, and I'll text you as soon as it is", comp: "I've also upgraded you to a sea-view room at no extra cost" },
+      { issue: "The confirmation email shows the wrong check-in date.", opening: "Hello! I just noticed my confirmation email shows check-in on the 14th, but I booked for the 12th. Could you check that for me?", details: "Of course, the booking reference is HG-7725.", detail: "Booking HG-7725 · email says 14th · guest booked the 12th", issueShort: "the mistake on your booking", fix: "I've corrected your booking to check in on the 12th", timeline: "You'll receive an updated confirmation email within 10 minutes", comp: "I've also added complimentary breakfast for your first morning" },
+      { issue: "The neighbouring room is very noisy before an early meeting.", opening: "Hi, I'm sorry to bother you, but the room next to mine is very noisy and I have an early meeting tomorrow. Would it be possible to change rooms?", details: "I'm in room 512, Emma Clarke.", detail: "Room 512 · noise from next door · early meeting tomorrow", issueShort: "the noise disturbing your evening", fix: "I've moved you to a quiet room on a higher floor, and our porter will help with your luggage", timeline: "The porter will be at your door within 10 minutes", comp: "I've also added complimentary breakfast tomorrow" }
+    ],
+    normal: [
+      { issue: "The bill includes a $60 minibar charge he didn't make.", opening: "Hi. My bill includes sixty dollars for the minibar, but I didn't take anything from it. I'd like that removed before I check out.", details: "Room 308, David Miller. I'm checking out in an hour.", detail: "Room 308 · $60 minibar charge disputed · checking out in 1 hour", issueShort: "the incorrect charge on your bill", fix: "I've removed the minibar charge from your bill", timeline: "You'll receive a corrected invoice by email in the next 10 minutes", comp: "I've also added a late checkout at 2 p.m. at no cost" },
+      { issue: "The air conditioning has been broken all night in 35°C heat.", opening: "Hello. The air conditioning in my room has been broken since last night, and it's thirty-five degrees outside. I couldn't sleep at all.", details: "Room 1104, David Miller. I reported it at 11 p.m. but nobody came.", detail: "Room 1104 · AC broken since 11 p.m. · reported, no response", issueShort: "the broken air conditioning and a sleepless night", fix: "I'll move you to an upgraded suite with working air conditioning, and maintenance will inspect your current room", timeline: "Your new suite will be ready within 30 minutes", comp: "I've also taken 50% off last night's rate" },
+      { issue: "A team lunch booking shows the standard menu instead of vegetarian.", opening: "Hi. We booked vegetarian catering for our team lunch tomorrow, but your confirmation says the standard menu. Half my team are vegetarian.", details: "Event booking EV-6091, for twenty people, under David Miller.", detail: "Event EV-6091 · 20 guests · vegetarian menu booked, standard confirmed", issueShort: "the error with your catering order", fix: "I've updated your order to the vegetarian menu and confirmed it with our head chef", timeline: "You'll receive a revised confirmation within 1 hour", comp: "We'll also include a complimentary dessert platter for your team" }
+    ],
+    hard: [
+      { issue: "The conference room was double-booked as 40 clients arrived.", opening: "I've just arrived with forty clients for our annual conference, and you've given our conference room to another company! This is a disaster. Do you know how much this event cost us?", details: "Booking EV-2231, Hale Partners. Richard Hale, managing partner.", detail: "Booking EV-2231 · conference room double-booked · 40 clients waiting", issueShort: "the double-booking of your conference room", fix: "I've moved your conference to our Grand Ballroom, and our events team is setting it up for you right now", timeline: "The ballroom will be ready within 20 minutes, and we'll serve coffee to your guests in the lobby while they wait", comp: "I'll also waive today's room hire fee and provide a complimentary lunch for all your guests" },
+      { issue: "Twenty wedding-guest rooms were cancelled without notice.", opening: "Your hotel cancelled twenty rooms for my daughter's wedding guests without telling us! The wedding is this Saturday and my guests have nowhere to stay!", details: "Group booking HG-G0815, under Richard Hale.", detail: "Group booking HG-G0815 · 20 rooms cancelled · wedding on Saturday", issueShort: "the cancellation of your wedding guests' rooms", fix: "I've reinstated as many rooms as possible here and reserved the rest at our partner hotel next door, with a free shuttle", timeline: "I'll email you the full room list within 1 hour", comp: "We'll cover the price difference and offer a complimentary dinner for the wedding party" },
+      { issue: "Valet lost luggage with a laptop two hours before a board meeting.", opening: "Your valet lost my luggage with my laptop and presentation inside, and I have a board meeting in two hours! If this isn't fixed, I'm leaving a review everywhere!", details: "Room 1802, Richard Hale. Valet ticket number 3317.", detail: "Room 1802 · valet ticket 3317 · luggage with laptop missing · board meeting in 2 hours", issueShort: "the loss of your luggage before your meeting", fix: "I've alerted our security team and the valet manager to search for your luggage, and I've booked our business center with a laptop and printer for you", timeline: "We'll have an update on your luggage within 30 minutes, and the business center is ready for you now", comp: "I'll also cover your stay tonight and compensate you for anything that isn't recovered" }
+    ]
+  }
+};
 const STEPS = [
-  { id: "greet", t: "Greet & identify", goal: "Open warmly, give your name, offer help.", lines: p => ["Thank you for contacting BET Support. My name is {agent}. How may I help you today?", "Good {daypart}, this is {agent} from customer care. Who am I speaking with, please?"] },
+  { id: "greet", t: "Greet & identify", goal: "Open warmly, give your name, offer help.", lines: p => ["Thank you for contacting {company}. My name is {agent}. How may I help you today?", "Good {daypart}, this is {agent} from customer care. Who am I speaking with, please?"] },
   { id: "listen", t: "Listen & acknowledge", goal: "Show empathy and confirm the details.", lines: p => [`I completely understand how frustrating ${p.issueShort} must be.`, `I hear you, and I can see why you're upset about ${p.issueShort}.`, "May I have your order or account number so I can check this right away?"] },
   { id: "apology", t: "Apologize sincerely", goal: "Take ownership without blaming anyone.", lines: p => ["I sincerely apologize for the inconvenience this has caused you.", `I'm truly sorry about ${p.issueShort}. That's not the experience we want for you.`] },
   { id: "solve", t: "Solve with a clear plan", goal: "Give a concrete action, a time and, if needed, compensation.", lines: p => [`To rectify this immediately, ${p.fix}.`, `${p.timeline}.`, `${p.comp}.`] },
@@ -970,28 +1169,36 @@ const STEPS = [
 ];
 const RX = {
   greet: /\b(hello|hi|good (morning|afternoon|evening)|thank(s| you) for (calling|contacting|reaching)|my name is|this is \w+ (from|at)|welcome to|how (may|can) i (help|assist))\b/i,
-  empathy: /\b(understand|frustrat|i hear you|i see why|that must|i can imagine|i can see|annoying|upsetting|makes sense|i know how|stressful|inconvenient for you)\b/i,
-  apology: /\b(sorry|apologi[sz]e|apologies|regret|my fault|our (fault|mistake)|our side)\b/i,
-  solution: /\b(refund|replace|replacement|resend|re-?ship|send|sent|ship|deliver|express|priority|upgrad|fix|resolv|restor|escalat|engineer|technician|exchange|return label|track|arrange|i will|i'll|we will|we'll|going to|(i|we)(')?ve (already )?\w+ed)\b/i,
-  comp: /\b(refund|credit|discount|voucher|compensat|waive|free of charge|reimburs|no (extra )?charge|on us|money back|coupon)\b/i,
+  empathy: /\b(understand|frustrat\w*|i hear you|i see why|that must|i can imagine|i can see|annoying|upsetting|makes sense|i know how|stressful|inconvenient for you)\b/i,
+  apology: /\b(sorry|apologi[sz]e\w*|apologies|regret|my fault|our (fault|mistake)|our side)\b/i,
+  solution: /\b(refund|replace|replacement|resend|re-?ship|send|sent|ship|deliver|express|priority|upgrad\w*|fix|resolv\w*|restor\w*|escalat\w*|engineer|technician|exchange|return label|track|arrange|i will|i'll|we will|we'll|going to|(i|we)(')?ve (already )?\w+ed)\b/i,
+  comp: /\b(refund|credit|discount|voucher|compensat\w*|waive\w*|free of charge|reimburs\w*|no (extra )?charge|on us|money back|coupon|complimentary|cover (the|your|all|any))\b/i,
   timeline: /\b(today|tonight|tomorrow|within|by (monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|noon|tonight|the end)|\d+\s*(minutes?|mins?|hours?|days?|business days?)|asap|right (now|away)|immediately|this (afternoon|morning|evening))\b/i,
   ask: /(\?\s*$)|\b(could you|can you|may i (have|ask|get)|what is|which|order number|account (number)?|your name|confirm)\b/i,
   askDetail: /\b(your (full )?name|who am i speaking|(order|account|reference|invoice|tracking) (number|id|no)|your (order|account|details|email|phone))\b/i,
   thanks: /\b(thank|thanks|appreciate|grateful)\b/i,
-  negative: /\b(can'?t|cannot|not possible|unfortunately|policy|nothing (i|we) can|no way|impossible|not (my|our) (problem|fault)|you should have)\b/i,
+  negative: /\b(can'?t|cannot|not possible|unfortunately|against (our )?policy|policy (says|doesn'?t|does not|won'?t)|nothing (i|we) can|no way|impossible|not (my|our) (problem|fault)|you should have)\b/i,
   rude: /\b(calm down|your fault|not my problem|whatever|shut up|stupid|deal with it)\b/i,
   anyElse: /\b(anything else|is there anything)\b/i
 };
 function analyze(t) { const r = {}; for (const k in RX) r[k] = RX[k].test(t); r.words = words(t); return r; }
 
-const sim = {
-  key: "easy", custom: store.get("simCustom", {}), cfg: {},
-  s: null
-};
-function P() { return PERSONAS[sim.key]; }
-function custom(k) { return sim.custom[sim.key] || {}; }
-function openingLine() { return custom().opening || P().lines.opening; }
-function issueText() { return custom().issue || P().issue; }
+const sim = { ind: "ecom", key: "easy", cur: null, edit: {}, lastIdx: {}, cfg: {}, s: null };
+function P() { return sim.cur; }
+/* pick a new complaint for the chosen industry + level, never the same one twice in a row */
+function newCase() {
+  const pool = SCEN[sim.ind][sim.key], k = sim.ind + sim.key, L = LEVELS[sim.key];
+  let i = Math.floor(Math.random() * pool.length);
+  if (pool.length > 1 && i === sim.lastIdx[k]) i = (i + 1 + Math.floor(Math.random() * (pool.length - 1))) % pool.length;
+  sim.lastIdx[k] = i;
+  const sc = pool[i];
+  sim.cur = { ...L, ...sc, ind: sim.ind, industry: INDUSTRIES[sim.ind].name, company: INDUSTRIES[sim.ind].company,
+    lines: { ...L.lines, opening: sc.opening, details: [sc.details] } };
+  sim.edit = {};
+  renderCase();
+}
+function openingLine() { return sim.edit.opening || P().lines.opening; }
+function issueText() { return sim.edit.issue || P().issue; }
 
 /* persona face: mood 0..100 drives mouth and brows */
 function faceSVG(mood, cls) {
@@ -1009,25 +1216,44 @@ function faceSVG(mood, cls) {
 function moodColor(m) { return m >= 65 ? "var(--good)" : m >= 35 ? "var(--warn)" : "var(--bad)"; }
 function moodWord(m) { return m >= 75 ? "Happy" : m >= 55 ? "Calm" : m >= 35 ? "Impatient" : m >= 15 ? "Angry" : "Furious"; }
 
+function showSimStep(n) {
+  $("#simSetup").hidden = false; $("#simSession").hidden = true; $("#simScore").hidden = true;
+  [1, 2, 3].forEach(i => $("#simStep" + i).hidden = i !== n);
+}
+$("#indCards").innerHTML = Object.entries(INDUSTRIES).map(([k, d]) =>
+  `<button class="ind" data-ind="${k}"><span class="icw" style="background:color-mix(in srgb,${d.tint} 12%,var(--surface));color:${d.tint}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d.icon}</svg></span><span><b>${d.name}</b><small>${d.sub}</small></span></button>`).join("");
+$("#indCards").addEventListener("click", e => {
+  const b = e.target.closest("[data-ind]"); if (!b) return;
+  sim.ind = b.dataset.ind; $("#indName").textContent = INDUSTRIES[sim.ind].name;
+  renderPersonaCards(); showSimStep(2);
+});
 function renderPersonaCards() {
-  $("#personaCards").innerHTML = Object.entries(PERSONAS).map(([k, p]) =>
-    `<button class="persona" data-p="${k}" aria-pressed="${k === sim.key}"><svg class="face" viewBox="0 0 100 100">${faceSVG(p.mood, p.cls)}</svg>
-     <span class="lvl ${p.cls}">${p.level}</span><h4>${p.name.split(" ")[0]}</h4><p><b>Topic:</b> ${esc(p.card)}</p></button>`).join("");
+  $("#personaCards").innerHTML = Object.entries(LEVELS).map(([k, p]) =>
+    `<button class="persona" data-p="${k}"><svg class="face" viewBox="0 0 100 100">${faceSVG(p.mood, p.cls)}</svg>
+     <span class="lvl ${p.cls}">${p.level}</span><h4>${p.name.split(" ")[0]}</h4><p>${esc(p.card)}</p></button>`).join("");
+}
+$("#personaCards").addEventListener("click", e => {
+  const b = e.target.closest("[data-p]"); if (!b) return;
+  sim.key = b.dataset.p; sim.cfg.voiceTouched = false;
+  $("#cfgRate").value = LEVELS[sim.key].voiceRate; $("#cfgPitch").value = LEVELS[sim.key].voicePitch; syncRanges();
+  newCase(); fillVoices(); showSimStep(3);
+});
+function renderCase() {
+  const p = P();
+  $("#caseBadge").innerHTML = `<span>${esc(p.industry)}</span><span class="lvl ${p.cls}">${esc(p.level)}</span>`;
   $("#cfgIssue").value = issueText();
   $("#cfgOpening").value = openingLine();
-  if (!sim.cfg.voiceTouched) { $("#cfgRate").value = P().voiceRate; $("#cfgPitch").value = P().voicePitch; syncRanges(); }
 }
-$("#personaCards").addEventListener("click", e => { const b = e.target.closest("[data-p]"); if (!b) return; sim.key = b.dataset.p; sim.cfg.voiceTouched = false; renderPersonaCards(); fillVoices(); });
-function saveCustom() {
-  const c = sim.custom[sim.key] = sim.custom[sim.key] || {};
+function saveEdit() {
   const iss = $("#cfgIssue").value.trim(), op = $("#cfgOpening").value.trim();
-  c.issue = iss && iss !== P().issue ? iss : undefined;
-  c.opening = op && op !== P().lines.opening ? op : undefined;
-  store.set("simCustom", sim.custom);
+  sim.edit.issue = iss && iss !== P().issue ? iss : undefined;
+  sim.edit.opening = op && op !== P().lines.opening ? op : undefined;
 }
-$("#cfgIssue").addEventListener("input", saveCustom);
-$("#cfgOpening").addEventListener("input", saveCustom);
-$("#cfgReset").addEventListener("click", () => { delete sim.custom[sim.key]; store.set("simCustom", sim.custom); renderPersonaCards(); toast("Reset to the default script"); });
+$("#cfgIssue").addEventListener("input", saveEdit);
+$("#cfgOpening").addEventListener("input", saveEdit);
+$("#cfgNew").addEventListener("click", () => { newCase(); toast("New complaint generated"); });
+$("#back1").addEventListener("click", () => showSimStep(1));
+$("#back2").addEventListener("click", () => showSimStep(2));
 $("#cfgPreview").addEventListener("click", () => customerSpeak($("#cfgOpening").value || openingLine()));
 
 function syncRanges() { $("#cfgRateO").textContent = (+$("#cfgRate").value).toFixed(2); $("#cfgPitchO").textContent = (+$("#cfgPitch").value).toFixed(2); }
@@ -1037,7 +1263,7 @@ function fillVoices() {
   const sel = $("#cfgVoice"); if (!sel) return;
   const keep = sel.value;
   const vs = TTS.voices;
-  sel.innerHTML = `<option value="">Auto (best match for ${P().name.split(" ")[0]})</option>` + vs.map(v => `<option value="${esc(v.name)}">${esc(v.name)} · ${esc(v.lang)}</option>`).join("");
+  sel.innerHTML = `<option value="">Auto (best match for ${LEVELS[sim.key].name.split(" ")[0]})</option>` + vs.map(v => `<option value="${esc(v.name)}">${esc(v.name)} · ${esc(v.lang)}</option>`).join("");
   if (!TTS.ok) sel.innerHTML = `<option value="">Voice output not supported in this browser</option>`;
   if ([...sel.options].some(o => o.value === keep)) sel.value = keep;
 }
@@ -1075,7 +1301,7 @@ const mic = { rec: null, on: false, finalText: "", media: null, chunks: [], stre
 function fill(str) {
   const p = P();
   const hour = new Date().getHours();
-  return str.replace(/\{agent\}/g, $("#cfgAgent").value.trim() || "Alex").replace(/\{cname\}/g, p.name.split(" ")[0])
+  return str.replace(/\{agent\}/g, $("#cfgAgent").value.trim() || "Alex").replace(/\{cname\}/g, p.name.split(" ")[0]).replace(/\{company\}/g, p.company)
     .replace(/\{daypart\}/g, hour < 12 ? "morning" : hour < 18 ? "afternoon" : "evening");
 }
 
@@ -1085,7 +1311,7 @@ function startSession() {
   sim.s = { turn: 0, mood: p.mood, covered: {}, timelineGiven: false, compGiven: false, detailsGiven: false, resolved: false, ended: false,
     history: [], used: new Set(), start: Date.now(), lastCust: "", moodTrail: [p.mood], rot: {}, busy: false };
   $("#simSetup").hidden = true; $("#simScore").hidden = true; $("#simSession").hidden = false;
-  $("#sName").textContent = p.name + " · " + p.level.split("·")[1].trim();
+  $("#sName").textContent = p.name + " · " + p.level.split("·")[1].trim() + " · " + p.industry;
   $("#sIssue").textContent = issueText();
   $("#sLog").innerHTML = ""; $("#sInput").value = ""; $("#sInterim").textContent = "";
   $("#sComposer").querySelectorAll("button,textarea").forEach(b => b.disabled = false);
@@ -1097,7 +1323,7 @@ function startSession() {
   setTimeout(() => customerSays(openingLine()), 500);
   $("#simSession").scrollIntoView({ behavior: "smooth", block: "start" });
 }
-$("#simStart").addEventListener("click", () => { saveCustom(); startSession(); });
+$("#simStart").addEventListener("click", () => { saveEdit(); startSession(); });
 
 function renderMood() {
   const m = sim.s.mood;
@@ -1111,7 +1337,7 @@ function renderScript() {
   const p = P(), s = sim.s, now = currentStep();
   $("#sProg").innerHTML = STEPS.map((st, i) => `<i class="${s.covered[st.id] ? "done" : i === now ? "now" : ""}"></i>`).join("");
   $("#sStepLbl").textContent = now === -1 ? "All steps covered" : `Step ${now + 1} of ${STEPS.length}`;
-  $("#sFacts").innerHTML = `<b>Case file</b><span>${esc(issueText())}</span>${s.detailsGiven ? `<span>${esc(p.detail)}</span>` : `<span class="muted">Ask for the order or account number to unlock details.</span>`}`;
+  $("#sFacts").innerHTML = `<b>Case file · ${esc(p.company)}</b><span>${esc(issueText())}</span>${s.detailsGiven ? `<span>${esc(p.detail)}</span>` : `<span class="muted">Ask for the order or account number to unlock details.</span>`}`;
   $("#sScript").innerHTML = STEPS.map((st, i) => {
     const cls = s.covered[st.id] ? "done" : i === now ? "now" : "";
     let lines = st.lines(p).map(fill);
@@ -1285,7 +1511,7 @@ async function geminiReply() {
   const s = sim.s, p = P();
   const key = $("#cfgKey").value.trim(), model = ($("#cfgModel").value.trim() || "gemini-2.5-flash").replace(/^models\//, "");
   const sys = `You are role-playing a CUSTOMER on a phone call to a customer service agent. The agent is a Vietnamese university student practising Business English.
-Persona: ${p.name}. Difficulty: ${p.level}. Issue: ${issueText()}. Facts you know (share only when asked): ${p.detail}.
+Persona: ${p.name}. Industry: ${p.industry}; you are a customer of "${p.company}". Difficulty: ${p.level}. Issue: ${issueText()}. Facts you know (share only when asked): ${p.detail}.
 Personality: ${sim.key === "easy" ? "friendly, patient, easily satisfied by a clear plan" : sim.key === "normal" ? "direct, a little impatient, wants empathy and a quick, concrete fix with a timeline" : "angry and demanding; insists on an apology, an exact timeline AND compensation before calming down; pushes back on vague answers"}.
 Your current mood is ${s.mood}/100 (${moodWord(s.mood)}). Let it shape your tone.
 Rules: Speak only as the customer, in natural spoken English, 1-3 short sentences. Never write the agent's lines, stage directions or emojis. Do not help the agent; react realistically.
@@ -1403,7 +1629,7 @@ function showScore() {
     `<div><span class="${s.timelineGiven ? "ok" : "no"}">${ic(s.timelineGiven ? "check" : "x")}</span>Gave a specific timeline</div>` +
     (p.needsComp ? `<div><span class="${s.compGiven ? "ok" : "no"}">${ic(s.compGiven ? "check" : "x")}</span>Offered compensation</div>` : "");
   const fb = [];
-  if (!s.covered.greet) fb.push("Open with a professional greeting and your name: \"Thank you for contacting BET Support. My name is…\"");
+  if (!s.covered.greet) fb.push(`Open with a professional greeting and your name: "Thank you for contacting ${p.company}. My name is…"`);
   if (!s.covered.listen) fb.push("Show empathy before solving: \"I completely understand how frustrating this must be.\"");
   if (!s.covered.apology) fb.push("Include a sincere apology. It calms customers faster than explanations.");
   if (!s.timelineGiven) fb.push("Always attach a specific time to your solution (\"within 2 business days\").");
@@ -1415,8 +1641,9 @@ function showScore() {
   const hist = store.get("simHistory", []); hist.push({ p: sim.key, score: total, at: new Date().toISOString() }); store.set("simHistory", hist.slice(-50));
   $("#simScore").scrollIntoView({ behavior: "smooth", block: "start" });
 }
-$("#scAgain").addEventListener("click", startSession);
-$("#scNew").addEventListener("click", () => { $("#simScore").hidden = true; $("#simSetup").hidden = false; });
+$("#scAgain").addEventListener("click", () => { newCase(); startSession(); });
+$("#scRetry").addEventListener("click", startSession);
+$("#scNew").addEventListener("click", () => showSimStep(1));
 $("#scCopy").addEventListener("click", () => copyText(sim.s.history.map(m => (m.who === "agent" ? "Agent: " : P().name.split(" ")[0] + ": ") + m.text).join("\n")));
 
 renderPersonaCards(); fillVoices(); syncRanges();
