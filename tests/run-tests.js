@@ -335,6 +335,7 @@
   M("MN-10", "Layout · Manual", "Phone layout", "Phone or 375px wide window", "Open every module", "No sideways scrolling; simulator stacks chat above script; buttons reachable");
   M("MN-11", "Layout · Manual", "Dark mode", "OS set to dark mode", "Open every module", "Dark background with readable text; no white blocks");
 
+  window.BET_TEST_CASES = T.map(({ run, ...meta }) => meta);
   window.runBetTests = async function () {
     const origCopy = window.copyText, origSpeak = TTS.speak;
     try { copyText = t => { copied = t; }; } catch {}
