@@ -205,7 +205,7 @@ mark.col{background:none;color:inherit}
 .callhead{display:flex;gap:14px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
 .callhead .face{width:56px;height:56px;flex:none}
 .callhead .who{flex:1;min-width:0}
-.callhead .who b{font:600 16px var(--f-display);display:block}
+.callhead .who b{font:600 16px var(--f-display);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .callhead .who small{color:var(--muted);font-size:12.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mood{display:grid;gap:4px;width:150px}
 .mood .lab{display:flex;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
@@ -1311,8 +1311,8 @@ function startSession() {
   sim.s = { turn: 0, mood: p.mood, covered: {}, timelineGiven: false, compGiven: false, detailsGiven: false, resolved: false, ended: false,
     history: [], used: new Set(), start: Date.now(), lastCust: "", moodTrail: [p.mood], rot: {}, busy: false };
   $("#simSetup").hidden = true; $("#simScore").hidden = true; $("#simSession").hidden = false;
-  $("#sName").textContent = p.name + " · " + p.level.split("·")[1].trim() + " · " + p.industry;
-  $("#sIssue").textContent = issueText();
+  $("#sName").textContent = p.name + " · " + p.level.split("·")[1].trim();
+  $("#sIssue").textContent = p.industry + " · " + issueText();
   $("#sLog").innerHTML = ""; $("#sInput").value = ""; $("#sInterim").textContent = "";
   $("#sComposer").querySelectorAll("button,textarea").forEach(b => b.disabled = false);
   $("#sLive").hidden = false;
